@@ -5,7 +5,7 @@
  * @format
  */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import type {PropsWithChildren} from 'react';
 import {
   SafeAreaView,
@@ -16,6 +16,7 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
+import ReactMoE from 'react-native-moengage';
 
 import {
   Colors,
@@ -61,6 +62,10 @@ function App(): JSX.Element {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
+
+  useEffect(() => {
+    ReactMoE.initialize("48VL1XKY8O8FKT6MO00XGEWA");
+}, []);
 
   return (
     <SafeAreaView style={backgroundStyle}>
